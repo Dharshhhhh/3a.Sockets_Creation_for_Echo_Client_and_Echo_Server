@@ -9,12 +9,12 @@ Sockets Links.
  server .
 4. Send and receive the message using the send function in socket.
 ## PROGRAM
-## SEVER
+## server
 ```
 import socket
 
-HOST = '127.0.0.1'  
-PORT = 65432        
+HOST = "127.0.0.1"
+PORT = 65432
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server_socket:
     server_socket.bind((HOST, PORT))
@@ -32,24 +32,26 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server_socket:
                 conn.sendall(data)
                 print(f"Echoed: {data.decode('utf-8')}")
 ```
-## CLIENT 
+## client 
 ```
 import socket
 
-HOST = '127.0.0.1'  
-PORT = 65432  
+HOST = "127.0.0.1"
+PORT = 65432
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as client_socket:
     client_socket.connect((HOST, PORT))
 
-    message = 'Hello, Server!'
-    client_socket.sendall(message.encode('utf-8'))
+    message = "Hello, Server!"
+    client_socket.sendall(message.encode("utf-8"))
 
     data = client_socket.recv(1024)
     print(f"Received echo: {data.decode('utf-8')}")
 ```
 ## OUPUT
-![3a](https://github.com/user-attachments/assets/ed962294-13b5-4cef-ae87-c0d95fcec040)
+![WhatsApp Image 2025-11-14 at 10 05 06_e59277a6](https://github.com/user-attachments/assets/c726467e-29ab-4553-aa0f-a9cb9a804f80)
+
+
 
 ## RESULT
 Thus, the python program for creating Echo Client and Echo Server using TCP Sockets Links 
